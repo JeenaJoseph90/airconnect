@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.websystique.springmvc")
+@ComponentScan(basePackages = "com.airconnect")
 public class AppConfig extends WebMvcConfigurerAdapter{
 
 	/**
