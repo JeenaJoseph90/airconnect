@@ -1,0 +1,46 @@
+html{
+	background-color:#2F2F2F;
+}
+
+body{
+	height: 100%;
+	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.has-error{
+	color:red;
+}
+
+body, #mainWrapper, .form-control{
+	font-size:12px!important;
+}
+
+/* #mainWrapper {
+	height: 720px; Without explicit px values, % in children's does not work
+	height: 100vh; with Viewport-Percentage, we can handles all devices screens 
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+} */
+
+.login-container {
+    margin-top: 100px;
+    background-color: floralwhite;
+    width: 40%;
+    left: 30%;
+    position: absolute;
+}
+
+.login-card {
+    width: 80%;
+    margin: auto;
+}
+
+.login-form {
+    padding: 10%;
+}
+
+/* .authbar{
+	margin-bottom:15px;
+} */
+    
