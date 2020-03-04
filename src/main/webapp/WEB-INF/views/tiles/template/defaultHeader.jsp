@@ -1,3 +1,5 @@
 <div>
-    	<h1>Tiles Demo</h1>
+    	<div class="pull-right">
+    		<%@include file="authheader.jsp"%>
+    	</div>
 </div>

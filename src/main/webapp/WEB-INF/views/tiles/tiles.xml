@@ -13,6 +13,28 @@
        <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
    </definition>  
  
+ 	 <!-- Index Definition -->  
+    <definition name="custom-definition" 
+       template="/WEB-INF/views/tiles/layouts/customLayout.jsp">  
+       <put-attribute name="body" value="" />  
+   </definition>
+ 
+   <!-- Login Page -->  
+   <definition name="login" extends="custom-definition">  
+       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />  
+   </definition>  
+ 
+ 	<definition name="userslist" extends="base-definition">  
+       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/userslist.jsp" />  
+   </definition> 
+   
+   <definition name="registration" extends="base-definition">  
+       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/registration.jsp" />  
+   </definition> 
+ 	
    <!-- Home Page -->
    <definition name="home" extends="base-definition">  
        <put-attribute name="title" value="Welcome" />  
