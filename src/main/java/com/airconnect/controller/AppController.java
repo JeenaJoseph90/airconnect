@@ -55,7 +55,7 @@ public class AppController {
 	    /**
 	     * This method will list all existing users.
 	     */
-	    @RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
+	    @RequestMapping(value = { "/list" }, method = RequestMethod.GET)
 	    public String listUsers(ModelMap model) {
 	 
 	        List<User> users = userService.findAllUsers();
@@ -107,7 +107,7 @@ public class AppController {
 	        model.addAttribute("success", "User " + user.getFirstName() + " "+ user.getLastName() + " registered successfully");
 	        model.addAttribute("loggedinuser", getPrincipal());
 	        //return "success";
-	        return "registrationsuccess";
+	        return "redirect:/list";
 	    }
 	 
 	 

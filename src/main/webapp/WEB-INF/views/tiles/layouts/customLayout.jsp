@@ -14,18 +14,9 @@
 	href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
 </head>
 <body>
+		<div id="content">
+			<tiles:insertAttribute name="content" />
+		</div>
 
-		<%-- <header id="header">
-			<tiles:insertAttribute name="header" />
-		</header> --%>
-			
-		<section id="main-content container">
-			<tiles:insertAttribute name="body" />
-		</section>
-		
-	<%-- 	<footer id="footer">
-			<tiles:insertAttribute name="footer" />
-		</footer> --%>
-		
 </body>
 </html>

@@ -1,0 +1,35 @@
+package com.airconnect.buyer.dao;
+
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
+import org.hibernate.criterion.Order;
+import org.springframework.stereotype.Repository;
+
+import com.airconnect.buyer.model.Buyer;
+import com.airconnect.common.dao.AbstractDao;
+
+@Repository("materialBuyerDao")
+public class MaterialBuyerDaoImpl extends AbstractDao<Integer, Buyer> implements MaterialBuyerDao {
+	
+	@Override
+    public List<Buyer> findAllBuyers() {
+        Criteria criteria = createEntityCriteria().addOrder(Order.asc("buyerName"));
+        criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);//To avoid duplicates.
+        @SuppressWarnings("unchecked")
+		List<Buyer> buyers = (List<Buyer>) criteria.list();
+        for(Buyer buyer : buyers){
+            Hibernate.initialize(buyer.getAirline());
+        }
+         
+        // No need to fetch userProfiles since we are not showing them on list page. Let them lazy load. 
+        // Uncomment below lines for eagerly fetching of userProfiles if you want.
+        /*
+        for(User user : users){
+            Hibernate.initialize(user.getUserProfiles());
+        }*/
+        return buyers;
+    }
+	
+}
