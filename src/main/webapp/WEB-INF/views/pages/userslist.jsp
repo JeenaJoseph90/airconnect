@@ -72,12 +72,14 @@
 											<sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
 												<td><a
 													href="<c:url value='/edit-user-${user.ssoId}' />"
-													class="btn btn-success custom-width">edit</a></td>
+													class="btn btn-success custom-width"><i
+														class="fas fa-edit"></i></a></td>
 											</sec:authorize>
 											<sec:authorize access="hasRole('ADMIN')">
 												<td><a
 													href="<c:url value='/delete-user-${user.ssoId}' />"
-													class="btn btn-danger custom-width">delete</a></td>
+													class="btn btn-danger custom-width"><i
+														class="fas fa-trash-alt"></i></a></td>
 											</sec:authorize>
 										</tr>
 									</c:forEach>

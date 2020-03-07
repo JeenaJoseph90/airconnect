@@ -9,7 +9,15 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark">Add New User</h1>
+				<c:choose>
+							<c:when test="${edit}">
+							<h1 class="m-0 text-dark">Edit User</h1>
+						</c:when>
+							<c:otherwise>
+							<h1 class="m-0 text-dark">Add New User</h1>
+						</c:otherwise>
+						</c:choose>
+					
 				</div>
 				<!-- /.col -->
 				<div class="col-sm-6">
@@ -32,15 +40,24 @@
 		<div class="container-fluid">
 			<div class="card card-default">
 				<div class="card-header">
-					<h3 class="card-title">User Registration Form</h3>
-
-
+					<h3 class="card-title">
+						User
+						<c:choose>
+							<c:when test="${edit}">
+							Update
+						</c:when>
+							<c:otherwise>
+							Registration
+						</c:otherwise>
+						</c:choose>
+						Form
+					</h3>
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
 					<form:form method="POST" modelAttribute="user"
 						class="form-horizontal" id="regForm">
-						
+
 						<form:input type="hidden" path="id" id="id" />
 						<div class="row">
 							<div class="col-md-6">
@@ -112,11 +129,11 @@
 									<c:choose>
 										<c:when test="${edit}">
 											<input type="submit" value="Update" class="btn btn-primary" />
-											<a href="<c:url value='/list' />" class="btn btn-danger">Cancel</a>
+											<a href="<c:url value='/users' />" class="btn btn-danger">Cancel</a>
 										</c:when>
 										<c:otherwise>
 											<input type="submit" value="Register" class="btn btn-primary" />
-											<a href="<c:url value='/list' />" class="btn btn-danger">Cancel</a>
+											<a href="<c:url value='/users' />" class="btn btn-danger">Cancel</a>
 										</c:otherwise>
 									</c:choose>
 								</div>
