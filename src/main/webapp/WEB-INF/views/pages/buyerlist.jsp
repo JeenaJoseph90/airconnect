@@ -45,11 +45,7 @@
 										<th>Mobile</th>
 										<th>Email</th>
 										<th>Fax</th>
-
 										<sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-											<th width="100"></th>
-										</sec:authorize>
-										<sec:authorize access="hasRole('ADMIN')">
 											<th width="100"></th>
 										</sec:authorize>
 
@@ -67,13 +63,15 @@
 											<td>${buyer.fax}</td>
 
 											<sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-												<td><a href="<c:url value='/edit-buyer-${buyer.id}' />"
-													class="btn btn-success custom-width">edit</a></td>
-											</sec:authorize>
-											<sec:authorize access="hasRole('ADMIN')">
-												<td><a
-													href="<c:url value='/delete-buyer-${buyer.id}' />"
-													class="btn btn-danger custom-width">delete</a></td>
+												<td class="text-center"><a
+													href="<c:url value='/edit-buyer-${buyer.id}' />"
+													class="btn btn-success custom-width"><i
+														class="fas fa-edit"></i></a> <sec:authorize
+														access="hasRole('ADMIN')">
+														<a href="<c:url value='/delete-buyer-${buyer.id}' />"
+															class="btn btn-danger custom-width"><i
+															class="fas fa-trash-alt"></i></a>
+													</sec:authorize></td>
 											</sec:authorize>
 										</tr>
 									</c:forEach>

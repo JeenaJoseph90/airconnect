@@ -56,10 +56,6 @@
 										<sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
 											<th width="100"></th>
 										</sec:authorize>
-										<sec:authorize access="hasRole('ADMIN')">
-											<th width="100"></th>
-										</sec:authorize>
-
 									</tr>
 								</thead>
 								<tbody>
@@ -70,16 +66,15 @@
 											<td>${user.email}</td>
 											<td>${user.ssoId}</td>
 											<sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-												<td><a
+												<td class="text-center"><a
 													href="<c:url value='/edit-user-${user.ssoId}' />"
 													class="btn btn-success custom-width"><i
-														class="fas fa-edit"></i></a></td>
-											</sec:authorize>
-											<sec:authorize access="hasRole('ADMIN')">
-												<td><a
-													href="<c:url value='/delete-user-${user.ssoId}' />"
-													class="btn btn-danger custom-width"><i
-														class="fas fa-trash-alt"></i></a></td>
+														class="fas fa-edit"></i></a> <sec:authorize
+														access="hasRole('ADMIN')">
+														<a href="<c:url value='/delete-user-${user.ssoId}' />"
+															class="btn btn-danger custom-width"><i
+															class="fas fa-trash-alt"></i></a>
+													</sec:authorize></td>
 											</sec:authorize>
 										</tr>
 									</c:forEach>
