@@ -8,4 +8,10 @@ public interface MaterialBuyerDao {
 
 	List<Buyer> findAllBuyers();
 
+	void saveBuyer(Buyer buyer);
+	
+	public Buyer findById(int id);
+	
+	public void deleteById(int id);
+
 }

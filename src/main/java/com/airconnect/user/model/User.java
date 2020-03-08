@@ -15,6 +15,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -24,27 +25,28 @@ public class User implements Serializable{
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
  
-    @NotEmpty
+    @NotEmpty(message = "SSO ID can not be empty.")
     @Column(name="SSO_ID", unique=true, nullable=false)
     private String ssoId;
      
-    @NotEmpty
+    @NotEmpty(message = "Password can not be empty.")
     @Column(name="PASSWORD", nullable=false)
     private String password;
          
-    @NotEmpty
+    @NotEmpty(message = "First Name can not be empty.")
     @Column(name="FIRST_NAME", nullable=false)
     private String firstName;
  
-    @NotEmpty
+    @NotEmpty(message = "Second Name can not be empty.")
     @Column(name="LAST_NAME", nullable=false)
     private String lastName;
  
-    @NotEmpty
+    @NotEmpty(message = "Email can not be empty.")
+    @Email(message = "Please provide valid Email Id.")
     @Column(name="EMAIL", nullable=false)
     private String email;
  
-    @NotEmpty
+    @NotEmpty(message = "Please select atleast one role.")
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "APP_USER_USER_PROFILE", 
              joinColumns = { @JoinColumn(name = "USER_ID") }, 

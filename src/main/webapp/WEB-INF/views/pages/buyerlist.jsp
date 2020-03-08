@@ -33,6 +33,16 @@
 					<!-- Default panel contents -->
 					<div class="card-header">List of Material Buyers</div>
 					<div class="card-body">
+						<c:if test="${param.success != null}">
+							<div class="alert alert-success alert-dismissible fade show"
+								role="alert">
+								<h5>${param.success}</h5>
+								<button type="button" class="close" data-dismiss="alert"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						</c:if>
 						<div class="table-responsive-md">
 							<table id="buyers"
 								class="table table-hover table-striped table-bordered">

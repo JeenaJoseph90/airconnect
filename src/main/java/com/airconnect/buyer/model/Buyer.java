@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.airconnect.common.model.Airline;
 
 @Entity
@@ -25,7 +28,8 @@ public class Buyer implements Serializable {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
  
-    @Column(name="person_name", nullable=true)
+	@NotEmpty(message = "Buyer Name can not be empty.")
+    @Column(name="person_name")
     private String buyerName;
     
     @Column(name="person_designation", nullable=true)
@@ -37,13 +41,14 @@ public class Buyer implements Serializable {
     @Column(name="mobile", nullable=true)
     private String mobile;
     
+    @Email(message = "Provide valid Email")
     @Column(name="email_id", nullable=true)
     private String email;
 	
     @Column(name="fax", nullable=true)
     private String fax;
     
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "airline_master_id")
     private Airline airline;
 

@@ -15,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
+import com.airconnect.converter.ElementToAirlineConverter;
 import com.airconnect.converter.RoleToUserProfileConverter;
 
 
@@ -25,6 +26,9 @@ public class AppConfig extends WebMvcConfigurerAdapter{
 	
 	@Autowired
     RoleToUserProfileConverter roleToUserProfileConverter;
+	
+	@Autowired
+	ElementToAirlineConverter elementToAirlineConverter;
 
 	/**
      * Configure TilesConfigurer.
@@ -62,6 +66,7 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(roleToUserProfileConverter);
+        // registry.addConverter(elementToAirlineConverter);
     }
      
  
