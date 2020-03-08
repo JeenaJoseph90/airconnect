@@ -1,16 +1,94 @@
-<div class="bg-light border-right" id="sidebar-wrapper">
-	<div class="sidebar-heading">
-		<%-- <a href="${pageContext.request.contextPath}/"> <img
-			src="${pageContext.request.contextPath}/static/img/Linux-icon.png"
-			class="rounded-circle mx-auto d-block bg-primary" alt="..."></a --%>>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+	<!-- Brand Logo -->
+	<a href="index3.html" class="brand-link"> <img
+		src="static/img/AdminLTELogo.png" alt="AdminLTE Logo"
+		class="brand-image img-circle elevation-3" style="opacity: .8">
+		<span class="brand-text font-weight-light">AirConnect</span>
+	</a>
+
+	<!-- Sidebar -->
+	<div class="sidebar">
+		<!-- Sidebar user panel (optional) -->
+		<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+			<div class="image">
+				<img src="static/img/user2-160x160.jpg"
+					class="img-circle elevation-2" alt="User Image">
+			</div>
+			<div class="info">
+				<a href="#" class="d-block">${sessionScope.loggedinuser}</a>
+			</div>
+		</div>
+		
+		<!-- Sidebar Menu -->
+		<nav class="mt-2">
+			<ul class="nav nav-pills nav-sidebar flex-column"
+				data-widget="treeview" role="menu" data-accordion="false">
+				<!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+				<li class="nav-item"><a
+					href="${pageContext.request.contextPath}/dashboard"
+					class="nav-link active"> <i
+						class="nav-icon fas fa-tachometer-alt"></i>
+						<p>Dashboard</p>
+				</a></li>
+			
+				<li class="nav-item has-treeview menu-close"><a href="#"
+					class="nav-link"> <i class="nav-icon fa fa-address-card"></i>
+						<p>
+							Material Buyers <i class="right fas fa-angle-left"></i>
+						</p>
+				</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item"><a href="${pageContext.request.contextPath}/buyers" class="nav-link active">
+								<i class="nav-icon fa fa-users"></i>
+								<p>All Buyers</p>
+						</a></li>
+						<li class="nav-item"><a href="${pageContext.request.contextPath}/newbuyer" class="nav-link"> <i class="nav-icon fa fa-user"></i>
+								<p>Add New Buyer</p>
+						</a></li>
+					</ul></li>
+				<li class="nav-item has-treeview menu-close"><a href="#"
+					class="nav-link"> <i class="nav-icon fa fa-users"></i>
+						<p>
+							Users <i class="right fas fa-angle-left"></i>
+						</p>
+				</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item"><a href="${pageContext.request.contextPath}/users" class="nav-link active">
+								<i class="nav-icon fa fa-users"></i>
+								<p>All Users</p>
+						</a></li>
+						<li class="nav-item"><a href="${pageContext.request.contextPath}/newuser" class="nav-link"> <i class="nav-icon fa fa-user"></i>
+								<p>Add New User</p>
+						</a></li>
+					</ul></li>
+				
+				<li class="nav-item has-treeview menu-close"><a href="#"
+					class="nav-link"> <i class="nav-icon fas fa-database"></i>
+						<p>
+							Master Data <i class="right fas fa-angle-left"></i>
+						</p>
+				</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item"><a href="#" class="nav-link active">
+								<i class="fa fa-globe nav-icon"></i>
+								<p>Country</p>
+						</a></li>
+						<li class="nav-item"><a href="#" class="nav-link"> <i
+								class="fa fa-plane nav-icon"></i>
+								<p>Airline</p>
+						</a></li>
+					</ul></li>
+				<li class="nav-item"><a href="#" class="nav-link"> <i
+						class="nav-icon fas fa-th"></i>
+						<p>
+							Simple Link <span class="right badge badge-danger">New</span>
+						</p>
+				</a></li>
+			</ul>
+		</nav>
+		<!-- /.sidebar-menu -->
 	</div>
-	<div class="list-group list-group-flush">
-		<a href="${pageContext.request.contextPath}/"
-			class="list-group-item list-group-item-action bg-light">Dashboard</a>
-		<a href="${pageContext.request.contextPath}/list"
-			class="list-group-item list-group-item-action bg-light">User</a> <a
-			href="${pageContext.request.contextPath}/contactus"
-			class="list-group-item list-group-item-action bg-light">Contact
-			Us</a>
-	</div>
-</div>
+	<!-- /.sidebar -->
+</aside>

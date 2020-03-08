@@ -4,7 +4,7 @@ html{
 
 body{
 	height: 100%;
-	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	background: white;
 }
 
 .has-error{
@@ -21,14 +21,17 @@ body, #mainWrapper, .form-control{
 	padding-left:10px;
 	padding-right:10px;
 	padding-bottom:10px;
-} */
-
+}
+ */
 .login-container {
-    margin-top: 100px;
-    background-color: floralwhite;
+	border:1px solid gray;
+    margin-top: 10%;
+    background-color: white;
     width: 40%;
     left: 30%;
     position: absolute;
+    box-shadow: 15px 15px 5px grey;
+    border-radius: 25px;
 }
 
 .login-card {

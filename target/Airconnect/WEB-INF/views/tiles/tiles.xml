@@ -3,58 +3,52 @@
 
 <tiles-definitions>  
    
-   <!-- Admin Definition -->
-   <definition name="admin-definition" 
-       template="/WEB-INF/views/tiles/layouts/adminLayout.jsp">  
+   <definition name="base-definition" 
+       template="/WEB-INF/views/tiles/layouts/baseLayout.jsp"> 
        <put-attribute name="title" value="" />  
        <put-attribute name="navbar" value="/WEB-INF/views/tiles/template/navbar.jsp" />  
        <put-attribute name="header" value="/WEB-INF/views/tiles/template/header.jsp" />  
+       <put-attribute name="sidebar" value="/WEB-INF/views/tiles/template/control-sidebar.jsp" />  
+       <put-attribute name="footer" value="/WEB-INF/views/tiles/template/footer.jsp" />  
        <put-attribute name="content" value="" />  
-   </definition>
+   </definition> 
  
  	 <!-- Index Definition -->  
     <definition name="custom-definition" 
        template="/WEB-INF/views/tiles/layouts/customLayout.jsp">  
-       <put-attribute name="body" value="" />  
+       <put-attribute name="content" value="" />  
    </definition>
  
    <!-- Login Page -->  
    <definition name="login" extends="custom-definition">  
        <put-attribute name="title" value="Welcome" />  
-       <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />  
+       <put-attribute name="content" value="/WEB-INF/views/pages/login.jsp" />  
    </definition>  
- 
- 	<!-- <definition name="userslist" extends="base-definition">  
-       <put-attribute name="title" value="Welcome" />  
-       <put-attribute name="body" value="/WEB-INF/views/pages/userslist.jsp" />  
-   </definition>  -->
    
-   <definition name="userslist" extends="admin-definition">  
+  <definition name="userslist" extends="base-definition">  
        <put-attribute name="title" value="Welcome" />  
        <put-attribute name="content" value="/WEB-INF/views/pages/userslist.jsp" />  
    </definition>
    
-   <definition name="registration" extends="admin-definition">  
+     <definition name="dashboard" extends="base-definition">  
+       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="content" value="/WEB-INF/views/pages/dashboard.jsp" />  
+   </definition>
+   
+    <definition name="buyerlist" extends="base-definition">  
+       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="content" value="/WEB-INF/views/pages/buyerlist.jsp" />  
+   </definition>
+   
+   <definition name="registration" extends="base-definition">  
        <put-attribute name="title" value="Welcome" />  
        <put-attribute name="content" value="/WEB-INF/views/pages/registration.jsp" />  
-   </definition> 
- 	
-   <!-- Home Page -->
-   <definition name="home" extends="admin-definition">  
+   </definition>    
+   
+     <definition name="addbuyer" extends="base-definition">  
        <put-attribute name="title" value="Welcome" />  
-       <put-attribute name="content" value="/WEB-INF/views/pages/home.jsp" />  
-   </definition>  
-
-   <!-- Product Page -->
-   <definition name="products" extends="admin-definition">  
-       <put-attribute name="title" value="Products" />  
-       <put-attribute name="content" value="/WEB-INF/views/pages/products.jsp" />  
-   </definition>  
+       <put-attribute name="content" value="/WEB-INF/views/pages/addbuyer.jsp" />  
+   </definition>   
       
-   <!-- Contact-us Page -->
-   <definition name="contactus" extends="admin-definition">  
-       <put-attribute name="title" value="Contact Us" />  
-       <put-attribute name="content" value="/WEB-INF/views/pages/contactus.jsp" />  
-   </definition>  
  
 </tiles-definitions>

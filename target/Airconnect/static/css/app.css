@@ -1,14 +1,14 @@
 
 .login-container {
-    margin-top: 100px;
+    margin-top: 50px;
     background-color: floralwhite;
-    width: 40%;
+    width: 50%;
     left: 30%;
     position: absolute;
 }
 
 .login-card {
-    width: 80%;
+    width: 50%;
     margin: auto;
 }
 
