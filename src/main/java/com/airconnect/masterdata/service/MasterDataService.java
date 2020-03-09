@@ -11,5 +11,6 @@ public interface MasterDataService {
 	public List<Airline> fetchAllAirlines();
 	public List<MasterDataVO<Integer, String>> fetchAirlinesByCountryId(int countryId);
 	public Airline findAirlineById(int id);
+	public Airline findAirlineByName(String name);
 	
 }

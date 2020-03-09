@@ -61,4 +61,9 @@ public class MasterDataServiceImpl implements MasterDataService {
 		return airlineDao.findById(id);
 	}
 
+	@Override
+	public Airline findAirlineByName(String name) {
+		return airlineDao.findAirlineByName(name);
+	}
+
 }

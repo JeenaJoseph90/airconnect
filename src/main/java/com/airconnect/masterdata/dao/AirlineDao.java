@@ -9,5 +9,6 @@ public interface AirlineDao {
 	public Airline findById(int id);
 	public List<Airline> findAllAirlines();
 	public List<Airline> findAirlinesByCountryId(int countryId);
+	public Airline findAirlineByName(String name);
 	
 }

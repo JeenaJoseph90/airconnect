@@ -1,3 +1,4 @@
+com\airconnect\converter\ElementToAirlineConverter.class
 com\airconnect\user\service\UserProfileService.class
 com\airconnect\common\model\Airline.class
 com\airconnect\user\service\UserProfileServiceImpl.class
@@ -6,6 +7,7 @@ com\airconnect\user\model\User.class
 com\airconnect\configuration\security\SecurityConfiguration.class
 com\airconnect\user\dao\UserProfileDao.class
 com\airconnect\controller\MaterialBuyerController.class
+com\airconnect\common\utility\ExcelPOIHelper.class
 com\airconnect\common\utility\UserUtility.class
 com\airconnect\buyer\dao\MaterialBuyerDaoImpl.class
 com\airconnect\user\model\UserProfile.class
@@ -14,9 +16,11 @@ com\airconnect\user\dao\HibernateTokenRepositoryImpl.class
 com\airconnect\user\dao\UserDao.class
 com\airconnect\user\dao\UserProfileDaoImpl.class
 com\airconnect\buyer\service\MaterialBuyerService.class
+com\airconnect\controller\FileUploadController.class
 com\airconnect\converter\RoleToUserProfileConverter.class
 com\airconnect\user\model\UserProfileType.class
 com\airconnect\buyer\model\Buyer.class
+com\airconnect\common\vo\MasterDataVO.class
 com\airconnect\controller\UserController.class
 com\airconnect\user\dao\UserDaoImpl.class
 com\airconnect\user\model\PersistentLogin.class
@@ -36,5 +40,6 @@ com\airconnect\buyer\service\MaterialBuyerServiceImpl.class
 com\airconnect\configuration\AppInitializer.class
 com\airconnect\masterdata\dao\CountryDao.class
 com\airconnect\common\model\Country.class
+com\airconnect\common\utility\XlsxView.class
 com\airconnect\masterdata\dao\AirlineDao.class
 com\airconnect\masterdata\dao\CountryDaoImpl.class

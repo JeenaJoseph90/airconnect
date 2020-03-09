@@ -47,6 +47,11 @@
 						<li class="nav-item"><a href="${pageContext.request.contextPath}/newbuyer" class="nav-link"> <i class="nav-icon fa fa-user"></i>
 								<p>Add New Buyer</p>
 						</a></li>
+						
+						<li class="nav-item"><a href="${pageContext.request.contextPath}/bulkbuyerupload" class="nav-link"> <i class="nav-icon fas fa-upload"></i>
+								<p>Bulk Upload</p>
+						</a></li>
+						
 					</ul></li>
 				<li class="nav-item has-treeview menu-close"><a href="#"
 					class="nav-link"> <i class="nav-icon fa fa-users"></i>
