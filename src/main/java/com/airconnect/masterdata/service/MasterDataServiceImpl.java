@@ -19,25 +19,29 @@ public class MasterDataServiceImpl implements MasterDataService {
 
 	@Autowired
 	private CountryDao countryDao;
-	
+
 	@Autowired
 	private AirlineDao airlineDao;
-	
-	public List<MasterDataVO<Integer, String>> fetchAllContries() {
+
+	public List<MasterDataVO<Integer, String>> getMasterCountries() {
 		return getMasterCountries(countryDao.findAllCountries());
 	}
-	
+
+	public List<Country> fetchAllContries() {
+		return countryDao.findAllCountries();
+	}
+
 	public List<Airline> fetchAllAirlines() {
 		return airlineDao.findAllAirlines();
 	}
-	
+
 	public List<MasterDataVO<Integer, String>> fetchAirlinesByCountryId(int countryId) {
 		return getMasterAirlines(airlineDao.findAirlinesByCountryId(countryId));
 	}
-	
+
 	private List<MasterDataVO<Integer, String>> getMasterAirlines(List<Airline> list) {
 		List<MasterDataVO<Integer, String>> vList = new ArrayList<MasterDataVO<Integer, String>>();
-		for(Airline airline :list) {
+		for (Airline airline : list) {
 			MasterDataVO<Integer, String> vo = new MasterDataVO<Integer, String>();
 			vo.setKey(airline.getId());
 			vo.setValue(airline.getAirlineName());
@@ -45,10 +49,10 @@ public class MasterDataServiceImpl implements MasterDataService {
 		}
 		return vList;
 	}
-	
+
 	private List<MasterDataVO<Integer, String>> getMasterCountries(List<Country> list) {
 		List<MasterDataVO<Integer, String>> vList = new ArrayList<MasterDataVO<Integer, String>>();
-		for(Country country :list) {
+		for (Country country : list) {
 			MasterDataVO<Integer, String> vo = new MasterDataVO<Integer, String>();
 			vo.setKey(country.getId());
 			vo.setValue(country.getCountryName());
@@ -56,7 +60,7 @@ public class MasterDataServiceImpl implements MasterDataService {
 		}
 		return vList;
 	}
-	
+
 	public Airline findAirlineById(int id) {
 		return airlineDao.findById(id);
 	}

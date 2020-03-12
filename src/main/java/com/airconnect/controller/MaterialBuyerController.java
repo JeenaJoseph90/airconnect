@@ -86,7 +86,7 @@ public class MaterialBuyerController {
 	
 	@RequestMapping(value = { "/getAllCountries" }, method = RequestMethod.GET)
 	public @ResponseBody List<MasterDataVO<Integer,String>> getAllCountries() {
-		List<MasterDataVO<Integer,String>> countries = masterDataService.fetchAllContries();
+		List<MasterDataVO<Integer,String>> countries = masterDataService.getMasterCountries();
 		return countries;
 	}
 	

@@ -17,4 +17,6 @@ public interface MaterialBuyerService {
 
 	void updateBuyer(Buyer buyer, MasterDataService masterDataService);
 
+	List<Buyer> findBuyersByAirlineId(int id);
+
 }

@@ -19,7 +19,8 @@ public class CountryDaoImpl extends AbstractDao<Integer, Country> implements Cou
 	public List<Country> findAllCountries() {
 		Criteria crit = createEntityCriteria();
 		crit.addOrder(Order.asc("countryName"));
-		return (List<Country>) crit.list();
+		List<Country> countryList = (List<Country>) crit.list();
+		return countryList;
 	}
 
 }

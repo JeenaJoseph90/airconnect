@@ -14,4 +14,6 @@ public interface MaterialBuyerDao {
 	
 	public void deleteById(int id);
 
+	List<Buyer> findBuyersByAirlineId(int id);
+
 }

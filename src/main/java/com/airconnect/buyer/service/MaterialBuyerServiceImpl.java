@@ -34,8 +34,8 @@ public class MaterialBuyerServiceImpl implements MaterialBuyerService {
 	}
 
 	@Override
-	public void deleteById(int id) {
-		materialBuyerDao.deleteById(id);
+	public List<Buyer> findBuyersByAirlineId(int id) {
+		return materialBuyerDao.findBuyersByAirlineId(id);
 	}
 	
 	@Override
@@ -53,4 +53,9 @@ public class MaterialBuyerServiceImpl implements MaterialBuyerService {
             entity.setEmail(buyer.getEmail());
         }
     }
+	
+	@Override
+	public void deleteById(int id) {
+		materialBuyerDao.deleteById(id);
+	}
 }

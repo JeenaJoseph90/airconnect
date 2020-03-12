@@ -52,4 +52,12 @@ public class MaterialBuyerDaoImpl extends AbstractDao<Integer, Buyer> implements
         delete(buyer);
     }
 	
+	@Override
+	public List<Buyer> findBuyersByAirlineId(int id) {
+		Criteria crit = createEntityCriteria();
+        crit.add(Restrictions.eq("airline.id", id));
+        List<Buyer> buyers =  crit.list();
+        return buyers;
+    }
+	
 }
