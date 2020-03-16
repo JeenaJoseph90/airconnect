@@ -12,7 +12,7 @@
 	<name>Airconnect</name>
 
 	<properties>
-		<springframework.version>4.2.6.RELEASE</springframework.version>
+		<springframework.version>5.2.4.RELEASE</springframework.version>
 		<apachetiles.version>3.0.5</apachetiles.version>
 		<springsecurity.version>4.0.4.RELEASE</springsecurity.version>
 		<hibernate.version>4.3.11.Final</hibernate.version>
